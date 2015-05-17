@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <div class="page-header">
+          <h1>Routely</h1>
+      </div>
+
+    <div ng-repeat="route in routes">
+    <span class="glyphicon glyphicon-thumbs-up"
+          ng-click="incrementUpvotes(route)" ></span>
+         {{route.upvotes}}
+        <span style="font-size:20px; margin-left:10px;"></span>
+        Route: {{route.name}} - {{route._id}}
+        <br />
+        {{route.description}}
+        <br />
+        <button class="btn btn-danger" ng-click="deleteRoute(route._id)" type="submit">Delete</button>
+    </div>
+    
+    <form novalidate style="margin-top:30px;" >
+    <h3>Add a new route</h3>
+    <div class="form-group">
+  <input type="text" class="form-control" ng-model="newroute.name" placeholder="Name" />
+  <input type="text" class="form-control" ng-model="newroute.description" placeholder="Description" />
+  </div>
+  <button class="btn btn-primary" ng-click="addRoute(newroute)" type="submit">Post</button>
+  </form>
+  </div>
+  </div>
