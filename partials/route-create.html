@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <div class="page-header">
+          <h1>Routely {{header}}</h1>
+      </div>
+      
+    <div class="nav">
+          <a class="btn btn-info" href="#/Home">Home</a>
+      </div>
+      <div>
+          <h2></h2>
+      </div>
+      <form novalidate style="margin-top:30px;" >
+    <h3>{{header}} route</h3>
+    <div class="form-group">
+    <input type="text" class="form-control" ng-model="route.name" placeholder="Name" />
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" ng-model="route.description" placeholder="Description" />
+    </div>
+    <div class="form-group">
+    <label for="sel1">Select Type:</label>
+    <select class="form-control" ng-model="route.type" convert-to-number>
+  <option value="0">Group</option>
+  <option value="1">Solo</option>
+</select>
+</div>
+<div class="form-group">
+<label for="sel1">Select Transportation:</label>
+    <select id="sel1" class="form-control" ng-model="route.transtype" convert-to-number>
+  <option value="0">Walking/Running</option>
+  <option value="1">Driving</option>
+  <option value="2">Biking</option>
+</select>
+</div>
+<div class="checkbox">
+<label for="priv" class="checkbox-inline">
+    <input id="priv" class="checkbox" type="checkbox" ng-model="route.priv">Private</label>
+  </div>
+  <div class="form-group">
+  <input type="date" class="form-control" id="plannedDate" name="plannedDate" ng-model="route.plannedDate"
+       placeholder="yyyy-MM-dd" min="{{date | date:'yyyy-MM-dd'}}" />
+       </div>
+       <div class="form-group">
+    <input id="initaddr" type="text" class="form-control" ng-model="route.initial_address.name" placeholder="Initial Address Name" />
+    </div>
+           <div class="form-group">
+    <input type="hidden" class="form-control" ng-model="route.initial_address.lat" placeholder="Initial Address Latitude" />
+    </div>
+           <div class="form-group">
+    <input type="hidden" class="form-control" ng-model="route.initial_address.lng" placeholder="Initial Address Longitude" />
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" ng-model="route.destination.name" placeholder="Destination Name" />
+    </div>
+        <div class="form-group">
+    <input type="hidden" class="form-control" ng-model="route.destination.lat" placeholder="Destination Latitude" />
+    </div>
+        <div class="form-group">
+    <input type="hidden" class="form-control" ng-model="route.destination.lng" placeholder="Destination Longitude" />
+    </div>
+    <button class="btn btn-primary" ng-click="check(route)" type="submit">{{buttonText}}</button>
+    </form>
+      </div>
+</div>
